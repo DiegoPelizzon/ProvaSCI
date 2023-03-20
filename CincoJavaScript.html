@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CincoJavaScript</title>
+</head>
+
+<body>
+
+    <script>
+        debugger;
+        var min = Number.MAX_SAFE_INTEGER,
+            max = 0,
+            AlunoMin,
+            AlunoMax;
+
+        var Alunos = [
+            ["", 0, 0, 0, 0, 0],
+            ["", 0, 0, 0, 0, 0],
+            ["", 0, 0, 0, 0, 0],
+        ]
+
+        for (var linha = 0; linha < Alunos.length; linha++) {
+
+            var media = 0,
+                MediaFinal;
+
+            for (var coluna = 0; coluna < 5; coluna++) {
+
+                if (coluna == 0) {
+
+                    Alunos[linha][coluna] = prompt("Digite o nome do " + (linha + 1) + " aluno");
+
+                } else {
+
+                    Alunos[linha][coluna] = prompt("Digite a " + coluna + " nota");
+                    media += (parseInt(Alunos[linha][coluna]));
+                }
+            }
+
+            MediaFinal = media / 4
+            Alunos[linha][coluna] = MediaFinal;
+
+            if (MediaFinal > max) {
+                max = MediaFinal;
+                AlunoMax = Alunos[linha][0];
+            }
+
+            if (MediaFinal < min) {
+                min = MediaFinal;
+                AlunoMin = Alunos[linha][0];
+            }
+        }
+
+        for (var linha = 0; linha < Alunos.length; linha++) {
+
+            for (var coluna = 0; coluna < 1; coluna++) {
+
+                document.write("O aluno: " + Alunos[linha][coluna] + ", tirou media geral: " + Alunos[linha][5] + "<br>");
+            }
+        }
+
+        document.writeln("<br>O aluno com maior media foi o "+AlunoMax+", Com media: "+max+"<br>");
+        document.writeln("O aluno com menor media foi o "+AlunoMin+", Com media: "+min);
+
+    </script>
+</body>
+
+</html>

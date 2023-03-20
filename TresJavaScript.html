@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var continuar,
+            media,
+            nome,
+            status,
+            notas = [];
+
+        do {
+            nome = prompt("Digite o nome do aluno");
+
+            for (i = 0; i < 4; i++) {
+
+                notas[i] = parseInt(prompt("Digite a " + (i + 1) + " nota de 4"));
+            }
+
+            media = (notas[0] + notas[1] + notas[2] + notas[3]) / 4;
+
+            if (media < 6) {
+                status = "Reprovado!";
+            } else {
+                status = "Aprovado!";
+            }
+
+            alert("O aluno " + nome + " teve nota media " + media + ", e esta " + status);
+
+            continuar = prompt("Deseja encerrar o programa, sim ou não?").toLowerCase().trim();
+
+        } while (continuar != "sim")
+
+    </script>
+</body>
+
+</html>
